@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 /*
 * Servicios
@@ -17,7 +19,8 @@ export class HeroesComponent implements OnInit {
   heroes:Heroe[] = [];
   
   //Constructor
-  constructor( private _heroesService:HeroesService) { 
+  constructor( private _heroesService:HeroesService,
+               private router:Router ) { 
     
   }
 
@@ -25,8 +28,13 @@ export class HeroesComponent implements OnInit {
 
     //Iniciar variable con data
     this.heroes = this._heroesService.getHeroes();
-    console.log( this.heroes );
+    // console.log( this.heroes );
 
+  }
+  
+  //Funcion que me lleva a una ruta de heroe
+  verHeroe( idx:number ) {
+    this.router.navigate( ['/heroe', idx] );
   }
 
 }
