@@ -64,6 +64,11 @@ export class HeroesService {
     getHeroes() {
         return this.heroes;
     }
+    
+    //Funcion para obtener un heroe
+    getHeroe( idx:string ) {
+        return this.heroes[idx];
+    }
 
 }
 
