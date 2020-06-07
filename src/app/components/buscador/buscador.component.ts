@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
 
@@ -9,7 +9,7 @@ import { HeroesService } from '../../services/heroes.service';
   templateUrl: './buscador.component.html'
 })
 export class BuscadorComponent implements OnInit {
-
+  
   heroes:any[] = [];
   termino:string;
 
