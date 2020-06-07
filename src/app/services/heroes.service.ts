@@ -57,7 +57,6 @@ export class HeroesService {
     ];
     
     constructor() {
-        console.log('servicio');
     }
     
     // Funcion que obtiene data de heroes
@@ -68,6 +67,24 @@ export class HeroesService {
     //Funcion para obtener un heroe
     getHeroe( idx:string ) {
         return this.heroes[idx];
+    }
+    
+    //Funcion para buscar heroes
+    buscarHeroes( termino:string ) {
+        //variable array inicializada en 0
+        let heroesArr:Heroe[] = [];
+        termino = termino.toLowerCase();
+
+        for(let heroe of this.heroes) {
+          let nombre = heroe.nombre.toLowerCase();
+
+          if( nombre.indexOf( termino ) >= 0 ) {
+            heroesArr.push( heroe );
+          }
+
+        }
+
+        return heroesArr;
     }
 
 }
